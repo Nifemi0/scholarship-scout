@@ -245,11 +245,12 @@ Mitigation: collect only information needed for matching; keep MVP state local; 
 - Typecheck, lint, seven tests, production build, security audit, and live browser smoke test pass.
 - Funding-type filtering is exposed in the profile UI, deterministic search engine, and `search_scholarships` WebMCP schema.
 - Live browser smoke test confirms the provenance panel and per-record source-proof panel are readable on production; the connected browser reports no `document.modelContext` support.
+- Results are ranked deterministically by profile fit and presented as eight readable cards first, with an explicit control to expand to all 30 catalog records.
 - The connected in-app browser and Chrome extension do not expose WebMCP on this host, so live tool invocation remains unverified.
 - The production deployment and public repository are complete; WebMCP browser verification and demo video remain incomplete.
 - Production URL: `https://scholarship-scout-brown.vercel.app`
 - Public repository: `https://github.com/Nifemi0/scholarship-scout`
-- Deployment: Vercel production deployment `dpl_CUCxuK4vV77Nk6CqoZxqk3zzRJ9g`, verified READY on August 28, 2026.
+- Deployment: Vercel production deployment `dpl_HWv9ypwdccEnV1HZEhE3q7e6RfA8`, verified READY on August 28, 2026.
 
 ## Open questions
 

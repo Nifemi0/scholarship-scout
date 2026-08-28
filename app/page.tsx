@@ -14,7 +14,9 @@ export default function Home() {
   const [expanded, setExpanded] = useState<string | null>(null);
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   const [hydrated, setHydrated] = useState(false);
+  const [showAll, setShowAll] = useState(false);
   const results = useMemo(() => searchScholarships(profile, scholarships), [profile]);
+  const visibleResults = showAll ? results : results.slice(0, 8);
 
   const update = (key: keyof StudentProfile, value: string) => setProfile((current) => ({ ...current, [key]: value }));
   const getScholarship = (id: string) => scholarships.find((item) => item.id === id);
@@ -60,20 +62,21 @@ export default function Home() {
           <p className="footer-note">We only use this profile to calculate matches in your browser. No documents or passwords are needed.</p>
         </aside>
         <section className="results" aria-labelledby="results-title">
-          <div className="results-head"><div><h2 id="results-title">Your starting matches</h2><p>{results.length} opportunities from the curated catalog</p></div><span className="muted">Catalog reviewed Aug 28, 2026</span></div>
+          <div className="results-head"><div><h2 id="results-title">Your starting matches</h2><p>{results.length} opportunities from the curated catalog · ranked by profile fit</p></div><span className="muted">Catalog reviewed Aug 28, 2026</span></div>
           <div className="agent-note"><strong>Agent insight:</strong> I found these using your structured profile. Open a card to see what matches, what does not, and what still needs checking. <span className="muted">Curated provider data — verify current details with the official source.</span></div>
           {compareIds.length > 0 && <div className="card" style={{ marginBottom: 16 }}><div className="provider">Comparison workspace · {compareIds.length}/2 selected</div><h3>See the trade-offs clearly</h3><div className="meta">{compareIds.map((id) => { const item = getScholarship(id); return item ? <span className="tag" key={id}>{item.title}</span> : null; })}</div>{compareIds.length < 2 ? <p className="muted">Select one more opportunity to compare awards, deadlines, and requirements side by side.</p> : <div className="meta">{compareIds.map((id) => { const item = getScholarship(id); return item ? <span className="tag" key={id}>{item.award} · {item.requirements.length} requirements · {item.documents.length} documents</span> : null; })}</div>}</div>}
-          <div className="cards">{results.map((scholarship) => {
+          <div className="cards">{visibleResults.map((scholarship, index) => {
             const eligibility = checkEligibility(profile, scholarship);
             const isOpen = expanded === scholarship.id;
             const isSaved = shortlist.includes(scholarship.id);
             return <article className="card" key={scholarship.id}>
-              <div className="card-top"><div><div className="provider">{scholarship.provider}</div><h3>{scholarship.title}</h3></div><div className="award">{scholarship.award}</div></div>
+              <div className="card-top"><div><div className="provider">#{index + 1} · {scholarship.provider}</div><h3>{scholarship.title}</h3></div><div className="award">{scholarship.award}</div></div>
               <p className="description">{scholarship.description}</p><div className="meta"><span className="tag">Deadline {scholarship.deadline}</span><span className="tag">{eligibility.summary}</span></div>
               <div className="card-actions"><button className="secondary" type="button" onClick={() => setExpanded(isOpen ? null : scholarship.id)}>{isOpen ? "Hide details" : "Check my fit"}</button><button className={`secondary ${isSaved ? "active" : ""}`} type="button" onClick={() => saveShortlist(scholarship.id)}>{isSaved ? "Saved to shortlist" : "Save to shortlist"}</button><button className={`secondary ${compareIds.includes(scholarship.id) ? "active" : ""}`} type="button" onClick={() => toggleCompare(scholarship.id)}>{compareIds.includes(scholarship.id) ? "In comparison" : "Compare"}</button></div>
               {isOpen && <div className="detail"><div className="criteria">{eligibility.criteria.map((criterion) => <div className="criterion" key={criterion.label}><span className={`dot ${criterion.status}`} /> <strong>{criterion.label}:</strong> {criterion.status} — {criterion.detail}</div>)}</div><div><div className="provider">Application checklist</div>{createChecklist(scholarship).map((item) => <label className="criterion" key={item.id}><input type="checkbox" checked={Boolean(checked[item.id])} onChange={(e) => setChecked((current) => ({ ...current, [item.id]: e.target.checked }))} />{item.label}</label>)}</div><div className="source-proof"><strong>Source proof</strong><span>{scholarship.sourceAuthority}</span><span>{scholarship.verificationStatus} · {scholarship.lastVerified}</span><span>{scholarship.sourceNote}</span><a className="muted" href={scholarship.sourceUrl} target="_blank" rel="noreferrer">Open official source ↗</a></div></div>}
             </article>;
           })}</div>
+          {results.length > 8 && <button className="secondary show-more" type="button" onClick={() => setShowAll((current) => !current)}>{showAll ? "Show fewer opportunities" : `Show all ${results.length} opportunities`}</button>}
           {!results.length && <div className="empty">No matches yet. Try widening your field, region, or deadline.</div>}
           {shortlist.length > 0 && <p className="footer-note">{shortlist.length} scholarship{shortlist.length === 1 ? "" : "s"} saved. Review each provider’s official source before applying.</p>}
         </section>

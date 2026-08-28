@@ -65,7 +65,7 @@ export function searchScholarships(profile: StudentProfile, allScholarships: Sch
     .filter((scholarship) => !profile.region || matches(scholarship.eligibleRegions, profile.region))
     .filter((scholarship) => !profile.fundingType || scholarship.fundingType === profile.fundingType)
     .filter((scholarship) => !profile.deadlineBefore || !scholarship.deadlineDate || scholarship.deadlineDate <= profile.deadlineBefore)
-    .sort((a, b) => b.lastVerified.localeCompare(a.lastVerified));
+    .sort((a, b) => checkEligibility(profile, b).score - checkEligibility(profile, a).score || b.lastVerified.localeCompare(a.lastVerified));
 }
 
 export function createChecklist(scholarship: Scholarship) {
