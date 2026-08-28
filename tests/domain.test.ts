@@ -8,11 +8,11 @@ const profile: StudentProfile = { region: "Nigeria", studyLevel: "undergraduate"
 describe("scholarship matching", () => {
   it("finds a relevant undergraduate computer science opportunity", () => {
     const results = searchScholarships(profile, scholarships);
-    assert.ok(results.map((result) => result.id).includes("future-builders"));
+    assert.ok(results.map((result) => result.id).includes("mastercard-scholars"));
   });
 
   it("reports a clear mismatch for an incompatible study level", () => {
-    const result = checkEligibility(profile, scholarships.find((item) => item.id === "global-leaders")!);
+    const result = checkEligibility(profile, scholarships.find((item) => item.id === "commonwealth-masters")!);
     assert.equal(result.criteria.find((criterion) => criterion.label === "Study level")?.status, "mismatch");
   });
 
@@ -23,7 +23,7 @@ describe("scholarship matching", () => {
 
   it("filters out scholarships after the requested deadline", () => {
     const results = searchScholarships({ ...profile, deadlineBefore: "2026-09-30" }, scholarships);
-    assert.ok(results.every((result) => result.deadline <= "2026-09-30"));
+    assert.ok(results.every((result) => !result.deadlineDate || result.deadlineDate <= "2026-09-30"));
   });
 
   it("creates one checklist task per required document", () => {

@@ -25,9 +25,9 @@ describe("WebMCP tool registration", () => {
     try {
       registerScholarshipTools({ scholarships, getProfile: () => ({ region: "", studyLevel: "", field: "", destination: "", deadlineBefore: "" }), saveShortlist: () => { saved = true; }, updateChecklist: () => undefined, getScholarship: (id) => scholarships.find((item) => item.id === id) });
       const saveTool = registered.find((tool) => tool.name === "save_to_shortlist")!;
-      assert.deepEqual(saveTool.execute({ scholarshipId: "future-builders" }), { saved: false, requiresConfirmation: true, scholarshipId: "future-builders" });
+      assert.deepEqual(saveTool.execute({ scholarshipId: "mastercard-scholars" }), { saved: false, requiresConfirmation: true, scholarshipId: "mastercard-scholars" });
       assert.equal(saved, false);
-      saveTool.execute({ scholarshipId: "future-builders", confirmedByStudent: true });
+      saveTool.execute({ scholarshipId: "mastercard-scholars", confirmedByStudent: true });
       assert.equal(saved, true);
     } finally {
       Object.defineProperty(globalThis, "document", { configurable: true, value: originalDocument });
