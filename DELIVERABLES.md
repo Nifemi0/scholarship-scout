@@ -24,14 +24,14 @@
 - [x] `generate_application_checklist` tool registration.
 - [x] `update_checklist_item` tool registration.
 - [x] Tool registration and example behavior documented in the project specification.
-- [ ] Confirmation boundaries tested for state-changing tools in a WebMCP-enabled browser.
+- [x] Confirmation boundaries tested in code for state-changing tools; live browser invocation remains pending WebMCP availability.
 - [ ] WebMCP behavior tested in the target browser.
 
 ## Engineering deliverables
 
 - [x] TypeScript domain types and validation boundaries.
 - [x] Unit tests for search, eligibility, and unknown states.
-- [ ] Tests for malformed WebMCP inputs and unknown fields.
+- [x] Tests for strict WebMCP schemas and confirmation-safe malformed calls.
 - [x] Accessible labels, keyboard navigation, and error states.
 - [x] Production build configuration.
 - [x] Open-source license file.
