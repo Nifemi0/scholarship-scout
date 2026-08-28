@@ -1,0 +1,35 @@
+# Scholarship Scout Demo Runbook
+
+Target length: 2 minutes 30 seconds.
+
+## 0:00–0:20 — The problem
+
+Show the landing page. Explain that scholarship information is scattered and that generic AI can hide uncertainty or invent details.
+
+## 0:20–0:45 — Set the profile
+
+Use the default profile: Nigeria, undergraduate, Computer Science, deadline before December 31, 2026. Point out that the app collects matching fields, not identity documents or passwords.
+
+## 0:45–1:10 — Search and explain
+
+Show the two starting matches. Open “Check my fit” on Women in STEM Access Grant. Point to match, mismatch, and unknown states and explain that the result is generated from structured data.
+
+## 1:10–1:35 — Compare and shortlist
+
+Select “Compare” on both results. Show the comparison workspace, then save one opportunity to the shortlist. Emphasize that saving is a human-approved action.
+
+## 1:35–2:05 — Build an application plan
+
+Open the saved opportunity, show the required-document checklist, and mark one task complete. Refresh the page to demonstrate local persistence.
+
+## 2:05–2:30 — WebMCP and trust boundary
+
+In a WebMCP-enabled browser, show the registered tools or invoke `search_scholarships`, `check_eligibility`, and `generate_application_checklist`. Close by showing the official-source link, last-verified date, demo-catalog label, and the rule that applications are never submitted automatically.
+
+## Recording checklist
+
+- [ ] Use a public YouTube link with audio.
+- [ ] Keep the video under three minutes.
+- [ ] Show the live URL, not only a local build.
+- [ ] Show at least one WebMCP tool invocation.
+- [ ] Avoid copyrighted music and private student data.

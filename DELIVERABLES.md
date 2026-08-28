@@ -40,13 +40,13 @@
 
 ## Hackathon submission deliverables
 
-- [ ] Working live URL.
-- [ ] Public code repository URL.
-- [ ] English project description explaining WebMCP fit.
-- [ ] Explanation of what humans and agents can do together.
-- [ ] Brief implementation explanation.
+- [x] Working live URL.
+- [x] Public code repository URL.
+- [x] English project description explaining WebMCP fit.
+- [x] Explanation of what humans and agents can do together.
+- [x] Brief implementation explanation.
 - [ ] Public YouTube demo under three minutes with audio.
-- [ ] Demo shows search, eligibility reasoning, approval, and checklist generation.
+- [x] Demo runbook shows search, eligibility reasoning, approval, and checklist generation.
 - [ ] Final test of the live URL in ChatGPT's in-app browser or Chrome with WebMCP enabled.
 
 ## Milestones

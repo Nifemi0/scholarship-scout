@@ -244,6 +244,9 @@ Mitigation: collect only information needed for matching; keep MVP state local; 
 - Six WebMCP tool registrations implemented in `lib/webmcp.ts`; runtime tool discovery remains dependent on a WebMCP-enabled browser.
 - Typecheck, lint, three domain tests, production build, and live browser smoke test pass.
 - Public deployment, authoritative scholarship data, full WebMCP browser verification, and submission materials remain incomplete.
+- Production URL: `https://scholarship-scout-brown.vercel.app`
+- Public repository: `https://github.com/Nifemi0/scholarship-scout`
+- Deployment: Vercel production deployment `dpl_GtP9YY5aPEucGVZwd4J5yaLMC2QB`, verified READY on August 28, 2026.
 
 ## Open questions
 
