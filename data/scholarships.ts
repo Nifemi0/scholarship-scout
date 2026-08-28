@@ -17,6 +17,8 @@ export type Scholarship = {
   requirements: string[];
   documents: string[];
   sourceUrl: string;
+  sourceAuthority: string;
+  verificationStatus: string;
   lastVerified: string;
   sourceNote: string;
 };
@@ -37,6 +39,8 @@ const coreScholarships: Scholarship[] = [
     requirements: ["Meet the selected partner institution's criteria", "Check the partner's current eligibility and deadline", "Apply directly through the selected partner institution"],
     documents: ["Academic records", "Personal statement", "Partner-specific documents"],
     sourceUrl: "https://mastercardfdn.org/en/what-we-do/our-programs/mastercard-foundation-scholars-program/where-to-apply/",
+    sourceAuthority: "Official Mastercard Foundation partner page",
+    verificationStatus: "Manually checked against the official source",
     lastVerified: "2026-08-28",
     sourceNote: "The Foundation says partner institutions manage their own criteria and deadlines.",
   },
@@ -56,6 +60,8 @@ const coreScholarships: Scholarship[] = [
     requirements: ["Citizen or resident of an eligible Commonwealth country", "Hold a first degree by September 2027", "Unable to afford UK study without the award"],
     documents: ["University qualifications", "Personal statement", "Supporting application evidence"],
     sourceUrl: "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+    sourceAuthority: "Official Commonwealth Scholarship Commission page",
+    verificationStatus: "Manually checked against the official source",
     lastVerified: "2026-08-28",
     sourceNote: "The official page lists the 2027/28 opening and closing dates and eligibility requirements.",
   },
@@ -75,6 +81,8 @@ const coreScholarships: Scholarship[] = [
     requirements: ["Citizen of a Chevening-eligible country", "At least 2,800 hours of eligible work experience", "Apply to three eligible UK courses"],
     documents: ["Course choices", "Leadership and influence essays", "References"],
     sourceUrl: "https://www.chevening.org/resource-hub/guidance/eligibility/",
+    sourceAuthority: "Official Chevening / UK FCDO page",
+    verificationStatus: "Manually checked against the official source",
     lastVerified: "2026-08-28",
     sourceNote: "The official timeline lists applications opening 4 Aug 2026 and closing 6 Oct 2026 at 11:00 UTC.",
   },
@@ -93,6 +101,8 @@ const coreScholarships: Scholarship[] = [
     requirements: ["Hold a bachelor’s degree", "Meet the chosen Cambridge course requirements", "Be from and live in an African country"],
     documents: ["Degree records", "Course application", "Scholarship statement"],
     sourceUrl: "https://www.mastercardfoundation.fund.cam.ac.uk/apply/eligibility",
+    sourceAuthority: "Official University of Cambridge programme page",
+    verificationStatus: "Manually checked against the official source",
     lastVerified: "2026-08-28",
     sourceNote: "Cambridge states that funding deadlines depend on the selected course.",
   },
@@ -109,12 +119,16 @@ const makeVerifiedProgram = (config: {
   award: string;
   fundingType?: FundingType;
   sourceUrl: string;
+  sourceAuthority?: string;
+  verificationStatus?: string;
   sourceNote: string;
 }): Scholarship => ({
   ...config,
   fundingType: config.fundingType ?? "varies",
   description: `${config.title} is an established scholarship or funding programme operated by ${config.provider}.`,
   deadline: "Varies by cycle or programme",
+  sourceAuthority: config.sourceAuthority ?? `Official ${config.provider} programme page`,
+  verificationStatus: config.verificationStatus ?? "Manually checked against the official source",
   requirements: ["Review the official programme eligibility rules", "Check the current cycle and application route", "Apply through the official provider or named institution"],
   documents: ["Academic records", "Personal statement or study plan", "Provider-specific supporting documents"],
   lastVerified: "2026-08-28",

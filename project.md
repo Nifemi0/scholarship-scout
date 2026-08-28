@@ -248,7 +248,7 @@ Mitigation: collect only information needed for matching; keep MVP state local; 
 - The production deployment and public repository are complete; WebMCP browser verification and demo video remain incomplete.
 - Production URL: `https://scholarship-scout-brown.vercel.app`
 - Public repository: `https://github.com/Nifemi0/scholarship-scout`
-- Deployment: Vercel production deployment `dpl_2UUX1HbLhMke7tm6oYTByaXnfLcy`, verified READY on August 28, 2026.
+- Deployment: Vercel production deployment `dpl_5XgqZzLC5xC3KPFMRuL7Brp5KLpT`, verified READY on August 28, 2026.
 
 ## Open questions
 

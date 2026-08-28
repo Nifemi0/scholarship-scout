@@ -34,7 +34,7 @@ describe("scholarship matching", () => {
 
   it("contains the scoped real catalog with official sources", () => {
     assert.ok(scholarships.length >= 30);
-    assert.ok(scholarships.every((scholarship) => scholarship.sourceUrl.startsWith("https://") && scholarship.lastVerified));
+    assert.ok(scholarships.every((scholarship) => scholarship.sourceUrl.startsWith("https://") && scholarship.sourceAuthority && scholarship.verificationStatus && scholarship.lastVerified));
   });
 
   it("creates one checklist task per required document", () => {
