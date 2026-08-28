@@ -244,6 +244,7 @@ Mitigation: collect only information needed for matching; keep MVP state local; 
 - Six WebMCP tool registrations implemented in `lib/webmcp.ts`, with strict schemas and confirmation-safe state changes.
 - Typecheck, lint, seven tests, production build, security audit, and live browser smoke test pass.
 - Funding-type filtering is exposed in the profile UI, deterministic search engine, and `search_scholarships` WebMCP schema.
+- Live browser smoke test confirms the provenance panel and per-record source-proof panel are readable on production; the connected browser reports no `document.modelContext` support.
 - The connected in-app browser and Chrome extension do not expose WebMCP on this host, so live tool invocation remains unverified.
 - The production deployment and public repository are complete; WebMCP browser verification and demo video remain incomplete.
 - Production URL: `https://scholarship-scout-brown.vercel.app`
