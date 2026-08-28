@@ -4,7 +4,7 @@
 
 - [x] Product shell and responsive layout.
 - [x] Student profile form with validation.
-- [x] Curated demo scholarship catalog with source, deadline, eligibility, and freshness metadata.
+- [x] Curated real scholarship catalog with official source, deadline, eligibility, and freshness metadata.
 - [x] Search and filter experience.
 - [x] Deterministic eligibility evaluator.
 - [x] Explainable match, mismatch, and unknown states.

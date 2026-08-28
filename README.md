@@ -15,4 +15,4 @@ Scholarship Scout is a WebMCP-powered application that helps students discover s
 
 **Not started — planning scaffold complete.**
 
-The first implementation should use a curated, clearly labeled scholarship dataset so the complete user journey can be demonstrated reliably without depending on fragile scraping.
+The current implementation uses a curated catalog of official provider/program pages. Deadlines and eligibility can change, so users are directed to the official source before applying.

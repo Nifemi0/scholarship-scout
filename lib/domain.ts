@@ -24,6 +24,9 @@ export type EligibilityResult = {
 const matches = (values: string[], value: string) =>
   !value || values.some((entry) => entry.toLowerCase() === value.toLowerCase()) || values.includes("Any country");
 
+const matchesField = (values: string[], value: string) =>
+  !value || values.some((entry) => entry.toLowerCase() === value.toLowerCase()) || values.includes("Any field");
+
 export function checkEligibility(profile: StudentProfile, scholarship: Scholarship): EligibilityResult {
   const criteria: CriterionResult[] = [
     {
@@ -33,7 +36,7 @@ export function checkEligibility(profile: StudentProfile, scholarship: Scholarsh
     },
     {
       label: "Field of study",
-      status: profile.field ? (scholarship.fields.some((field) => field.toLowerCase() === profile.field.toLowerCase()) ? "match" : "unknown") : "unknown",
+      status: profile.field ? (matchesField(scholarship.fields, profile.field) ? "match" : "unknown") : "unknown",
       detail: profile.field ? `${scholarship.fields.join(", ")}` : "Add your field to check",
     },
     {
@@ -57,9 +60,9 @@ export function checkEligibility(profile: StudentProfile, scholarship: Scholarsh
 export function searchScholarships(profile: StudentProfile, allScholarships: Scholarship[]): Scholarship[] {
   return allScholarships
     .filter((scholarship) => !profile.studyLevel || scholarship.studyLevels.includes(profile.studyLevel))
-    .filter((scholarship) => !profile.field || scholarship.fields.some((field) => field.toLowerCase() === profile.field.toLowerCase()))
+    .filter((scholarship) => !profile.field || matchesField(scholarship.fields, profile.field))
     .filter((scholarship) => !profile.region || matches(scholarship.eligibleRegions, profile.region))
-    .filter((scholarship) => !profile.deadlineBefore || scholarship.deadline <= profile.deadlineBefore)
+    .filter((scholarship) => !profile.deadlineBefore || !scholarship.deadlineDate || scholarship.deadlineDate <= profile.deadlineBefore)
     .sort((a, b) => b.lastVerified.localeCompare(a.lastVerified));
 }
 

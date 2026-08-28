@@ -5,7 +5,7 @@ import { scholarships, type Scholarship } from "@/data/scholarships";
 import { checkEligibility, createChecklist, searchScholarships, type StudentProfile } from "@/lib/domain";
 import { registerScholarshipTools } from "@/lib/webmcp";
 
-const initialProfile: StudentProfile = { region: "Nigeria", studyLevel: "undergraduate", field: "Computer Science", destination: "", deadlineBefore: "2026-12-31" };
+const initialProfile: StudentProfile = { region: "Nigeria", studyLevel: "", field: "Computer Science", destination: "", deadlineBefore: "2026-12-31" };
 
 export default function Home() {
   const [profile, setProfile] = useState<StudentProfile>(initialProfile);
@@ -67,9 +67,9 @@ export default function Home() {
             const isSaved = shortlist.includes(scholarship.id);
             return <article className="card" key={scholarship.id}>
               <div className="card-top"><div><div className="provider">{scholarship.provider}</div><h3>{scholarship.title}</h3></div><div className="award">{scholarship.award}</div></div>
-              <p className="description">{scholarship.description}</p><div className="meta"><span className="tag">Deadline {new Date(scholarship.deadline).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span><span className="tag">{eligibility.summary}</span></div>
+              <p className="description">{scholarship.description}</p><div className="meta"><span className="tag">Deadline {scholarship.deadline}</span><span className="tag">{eligibility.summary}</span></div>
               <div className="card-actions"><button className="secondary" type="button" onClick={() => setExpanded(isOpen ? null : scholarship.id)}>{isOpen ? "Hide details" : "Check my fit"}</button><button className={`secondary ${isSaved ? "active" : ""}`} type="button" onClick={() => saveShortlist(scholarship.id)}>{isSaved ? "Saved to shortlist" : "Save to shortlist"}</button><button className={`secondary ${compareIds.includes(scholarship.id) ? "active" : ""}`} type="button" onClick={() => toggleCompare(scholarship.id)}>{compareIds.includes(scholarship.id) ? "In comparison" : "Compare"}</button></div>
-              {isOpen && <div className="detail"><div className="criteria">{eligibility.criteria.map((criterion) => <div className="criterion" key={criterion.label}><span className={`dot ${criterion.status}`} /> <strong>{criterion.label}:</strong> {criterion.status} — {criterion.detail}</div>)}</div><div><div className="provider">Application checklist</div>{createChecklist(scholarship).map((item) => <label className="criterion" key={item.id}><input type="checkbox" checked={Boolean(checked[item.id])} onChange={(e) => setChecked((current) => ({ ...current, [item.id]: e.target.checked }))} />{item.label}</label>)}</div><a className="muted" href={scholarship.sourceUrl} target="_blank" rel="noreferrer">Review original source ↗</a></div>}
+              {isOpen && <div className="detail"><div className="criteria">{eligibility.criteria.map((criterion) => <div className="criterion" key={criterion.label}><span className={`dot ${criterion.status}`} /> <strong>{criterion.label}:</strong> {criterion.status} — {criterion.detail}</div>)}</div><div><div className="provider">Application checklist</div>{createChecklist(scholarship).map((item) => <label className="criterion" key={item.id}><input type="checkbox" checked={Boolean(checked[item.id])} onChange={(e) => setChecked((current) => ({ ...current, [item.id]: e.target.checked }))} />{item.label}</label>)}</div><p className="muted">{scholarship.sourceNote} Last verified {scholarship.lastVerified}.</p><a className="muted" href={scholarship.sourceUrl} target="_blank" rel="noreferrer">Review official source ↗</a></div>}
             </article>;
           })}</div>
           {!results.length && <div className="empty">No matches yet. Try widening your field, region, or deadline.</div>}

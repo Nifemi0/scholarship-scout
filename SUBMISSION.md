@@ -24,4 +24,4 @@ The application is built with Next.js 16, React, and TypeScript. Search, filteri
 
 ## Disclosure
 
-The current build uses a clearly labeled curated demo catalog. Each opportunity must be checked against its provider before a real student relies on it. The application does not submit applications or guarantee eligibility or awards.
+The current build uses a curated catalog of real scholarship programs and official provider/program pages. Deadlines and eligibility rules can change, so each opportunity must still be checked against its linked provider before a student relies on it. The application does not submit applications or guarantee eligibility or awards.
