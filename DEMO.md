@@ -24,7 +24,7 @@ Open the saved opportunity, show the required-document checklist, and mark one t
 
 ## 2:05–2:30 — WebMCP and trust boundary
 
-In a WebMCP-enabled browser, show the registered tools or invoke `search_scholarships`, `check_eligibility`, and `generate_application_checklist`. Close by showing the official-source link, last-verified date, demo-catalog label, and the rule that applications are never submitted automatically.
+In a WebMCP-enabled browser, show the registered tools or invoke `search_scholarships`, `check_eligibility`, and `generate_application_checklist`. Close by showing the official-source link, last-verified date, curated-provider-data label, and the rule that applications are never submitted automatically.
 
 ## Recording checklist
 

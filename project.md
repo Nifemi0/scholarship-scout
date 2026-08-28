@@ -239,15 +239,16 @@ Mitigation: collect only information needed for matching; keep MVP state local; 
 ## Implementation status — August 28, 2026
 
 - Application foundation created in `app/`, with Next.js, TypeScript, React, local persistence, and an MIT license.
-- Curated catalog created with four official provider/program pages, explicit source notes, freshness metadata, and conservative deadline labels.
+- Curated catalog created with 30 official provider/program pages, explicit source notes, freshness metadata, and conservative deadline labels.
 - Deterministic search, filtering, eligibility match/mismatch/unknown states, comparison, shortlist, and checklist behavior implemented.
 - Six WebMCP tool registrations implemented in `lib/webmcp.ts`, with strict schemas and confirmation-safe state changes.
 - Typecheck, lint, seven tests, production build, security audit, and live browser smoke test pass.
+- Funding-type filtering is exposed in the profile UI, deterministic search engine, and `search_scholarships` WebMCP schema.
 - The connected in-app browser and Chrome extension do not expose WebMCP on this host, so live tool invocation remains unverified.
 - The production deployment and public repository are complete; WebMCP browser verification and demo video remain incomplete.
 - Production URL: `https://scholarship-scout-brown.vercel.app`
 - Public repository: `https://github.com/Nifemi0/scholarship-scout`
-- Deployment: Vercel production deployment `dpl_GtP9YY5aPEucGVZwd4J5yaLMC2QB`, verified READY on August 28, 2026.
+- Deployment: Vercel production deployment `dpl_2UUX1HbLhMke7tm6oYTByaXnfLcy`, verified READY on August 28, 2026.
 
 ## Open questions
 

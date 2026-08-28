@@ -3,7 +3,7 @@ import { describe, it } from "node:test";
 import { scholarships } from "../data/scholarships";
 import { checkEligibility, createChecklist, searchScholarships, type StudentProfile } from "../lib/domain";
 
-const profile: StudentProfile = { region: "Nigeria", studyLevel: "undergraduate", field: "Computer Science", destination: "", deadlineBefore: "2026-12-31" };
+const profile: StudentProfile = { region: "Nigeria", studyLevel: "undergraduate", field: "Computer Science", destination: "", fundingType: "", deadlineBefore: "2026-12-31" };
 
 describe("scholarship matching", () => {
   it("finds a relevant undergraduate computer science opportunity", () => {
@@ -24,6 +24,17 @@ describe("scholarship matching", () => {
   it("filters out scholarships after the requested deadline", () => {
     const results = searchScholarships({ ...profile, deadlineBefore: "2026-09-30" }, scholarships);
     assert.ok(results.every((result) => !result.deadlineDate || result.deadlineDate <= "2026-09-30"));
+  });
+
+  it("filters the catalog by funding type", () => {
+    const results = searchScholarships({ ...profile, fundingType: "full" }, scholarships);
+    assert.ok(results.length > 0);
+    assert.ok(results.every((result) => result.fundingType === "full"));
+  });
+
+  it("contains the scoped real catalog with official sources", () => {
+    assert.ok(scholarships.length >= 30);
+    assert.ok(scholarships.every((scholarship) => scholarship.sourceUrl.startsWith("https://") && scholarship.lastVerified));
   });
 
   it("creates one checklist task per required document", () => {

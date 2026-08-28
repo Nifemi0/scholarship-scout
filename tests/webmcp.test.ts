@@ -9,7 +9,7 @@ describe("WebMCP tool registration", () => {
     const originalDocument = globalThis.document;
     Object.defineProperty(globalThis, "document", { configurable: true, value: { modelContext: { registerTool: (tool: typeof registered[number]) => registered.push(tool) } } });
     try {
-      registerScholarshipTools({ scholarships, getProfile: () => ({ region: "Nigeria", studyLevel: "undergraduate", field: "Computer Science", destination: "", deadlineBefore: "2026-12-31" }), saveShortlist: () => undefined, updateChecklist: () => undefined, getScholarship: (id) => scholarships.find((item) => item.id === id) });
+      registerScholarshipTools({ scholarships, getProfile: () => ({ region: "Nigeria", studyLevel: "undergraduate", field: "Computer Science", destination: "", fundingType: "", deadlineBefore: "2026-12-31" }), saveShortlist: () => undefined, updateChecklist: () => undefined, getScholarship: (id) => scholarships.find((item) => item.id === id) });
       assert.deepEqual(registered.map((tool) => tool.name), ["search_scholarships", "check_eligibility", "compare_scholarships", "save_to_shortlist", "generate_application_checklist", "update_checklist_item"]);
       assert.equal(registered.every((tool) => tool.inputSchema.additionalProperties === false), true);
     } finally {
@@ -23,7 +23,7 @@ describe("WebMCP tool registration", () => {
     const originalDocument = globalThis.document;
     Object.defineProperty(globalThis, "document", { configurable: true, value: { modelContext: { registerTool: (tool: typeof registered[number]) => registered.push(tool) } } });
     try {
-      registerScholarshipTools({ scholarships, getProfile: () => ({ region: "", studyLevel: "", field: "", destination: "", deadlineBefore: "" }), saveShortlist: () => { saved = true; }, updateChecklist: () => undefined, getScholarship: (id) => scholarships.find((item) => item.id === id) });
+      registerScholarshipTools({ scholarships, getProfile: () => ({ region: "", studyLevel: "", field: "", destination: "", fundingType: "", deadlineBefore: "" }), saveShortlist: () => { saved = true; }, updateChecklist: () => undefined, getScholarship: (id) => scholarships.find((item) => item.id === id) });
       const saveTool = registered.find((tool) => tool.name === "save_to_shortlist")!;
       assert.deepEqual(saveTool.execute({ scholarshipId: "mastercard-scholars" }), { saved: false, requiresConfirmation: true, scholarshipId: "mastercard-scholars" });
       assert.equal(saved, false);

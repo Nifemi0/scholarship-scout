@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { scholarships, type Scholarship } from "@/data/scholarships";
+import { scholarships, type Scholarship, type FundingType } from "@/data/scholarships";
 import { checkEligibility, createChecklist, searchScholarships, type StudentProfile } from "@/lib/domain";
 import { registerScholarshipTools } from "@/lib/webmcp";
 
-const initialProfile: StudentProfile = { region: "Nigeria", studyLevel: "", field: "Computer Science", destination: "", deadlineBefore: "2026-12-31" };
+const initialProfile: StudentProfile = { region: "Nigeria", studyLevel: "", field: "Computer Science", destination: "", fundingType: "", deadlineBefore: "2026-12-31" };
 
 export default function Home() {
   const [profile, setProfile] = useState<StudentProfile>(initialProfile);
@@ -53,13 +53,14 @@ export default function Home() {
           <div className="field"><label htmlFor="region">Where are you based?</label><select id="region" value={profile.region} onChange={(e) => update("region", e.target.value)}><option value="">Any region</option><option>Nigeria</option><option>Ghana</option><option>Kenya</option><option>South Africa</option><option>Any country</option></select></div>
           <div className="field"><label htmlFor="level">Study level</label><select id="level" value={profile.studyLevel} onChange={(e) => update("studyLevel", e.target.value)}><option value="">Any level</option><option value="undergraduate">Undergraduate</option><option value="postgraduate">Postgraduate</option><option value="doctoral">Doctoral</option></select></div>
           <div className="field"><label htmlFor="field">Field of study</label><select id="field" value={profile.field} onChange={(e) => update("field", e.target.value)}><option value="">Any field</option><option>Computer Science</option><option>Engineering</option><option>Data Science</option><option>Public Policy</option><option>Environmental Science</option><option>Agriculture</option></select></div>
+          <div className="field"><label htmlFor="funding">Funding type</label><select id="funding" value={profile.fundingType} onChange={(e) => update("fundingType", e.target.value as FundingType | "")}><option value="">Any funding</option><option value="full">Full funding</option><option value="tuition">Tuition support</option><option value="partial">Partial funding</option><option value="varies">Varies by programme</option></select></div>
           <div className="field"><label htmlFor="deadline">Deadline before</label><input id="deadline" type="date" value={profile.deadlineBefore} onChange={(e) => update("deadlineBefore", e.target.value)} /></div>
           <button className="primary" type="button" onClick={() => setExpanded(null)}>Update matches <span aria-hidden="true">→</span></button>
           <p className="footer-note">We only use this profile to calculate matches in your browser. No documents or passwords are needed.</p>
         </aside>
         <section className="results" aria-labelledby="results-title">
           <div className="results-head"><div><h2 id="results-title">Your starting matches</h2><p>{results.length} opportunities from the curated catalog</p></div><span className="muted">Updated Aug 2026</span></div>
-          <div className="agent-note"><strong>Agent insight:</strong> I found these using your structured profile. Open a card to see what matches, what does not, and what still needs checking. <span className="muted">Demo catalog — verify every opportunity with its provider.</span></div>
+          <div className="agent-note"><strong>Agent insight:</strong> I found these using your structured profile. Open a card to see what matches, what does not, and what still needs checking. <span className="muted">Curated provider data — verify current details with the official source.</span></div>
           {compareIds.length > 0 && <div className="card" style={{ marginBottom: 16 }}><div className="provider">Comparison workspace · {compareIds.length}/2 selected</div><h3>See the trade-offs clearly</h3><div className="meta">{compareIds.map((id) => { const item = getScholarship(id); return item ? <span className="tag" key={id}>{item.title}</span> : null; })}</div>{compareIds.length < 2 ? <p className="muted">Select one more opportunity to compare awards, deadlines, and requirements side by side.</p> : <div className="meta">{compareIds.map((id) => { const item = getScholarship(id); return item ? <span className="tag" key={id}>{item.award} · {item.requirements.length} requirements · {item.documents.length} documents</span> : null; })}</div>}</div>}
           <div className="cards">{results.map((scholarship) => {
             const eligibility = checkEligibility(profile, scholarship);

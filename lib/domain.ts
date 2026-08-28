@@ -1,10 +1,11 @@
-import type { Scholarship, StudyLevel } from "@/data/scholarships";
+import type { FundingType, Scholarship, StudyLevel } from "@/data/scholarships";
 
 export type StudentProfile = {
   region: string;
   studyLevel: StudyLevel | "";
   field: string;
   destination: string;
+  fundingType: FundingType | "";
   deadlineBefore: string;
 };
 
@@ -62,6 +63,7 @@ export function searchScholarships(profile: StudentProfile, allScholarships: Sch
     .filter((scholarship) => !profile.studyLevel || scholarship.studyLevels.includes(profile.studyLevel))
     .filter((scholarship) => !profile.field || matchesField(scholarship.fields, profile.field))
     .filter((scholarship) => !profile.region || matches(scholarship.eligibleRegions, profile.region))
+    .filter((scholarship) => !profile.fundingType || scholarship.fundingType === profile.fundingType)
     .filter((scholarship) => !profile.deadlineBefore || !scholarship.deadlineDate || scholarship.deadlineDate <= profile.deadlineBefore)
     .sort((a, b) => b.lastVerified.localeCompare(a.lastVerified));
 }
