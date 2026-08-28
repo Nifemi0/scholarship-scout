@@ -2,6 +2,10 @@
 
 Target length: 2 minutes 30 seconds.
 
+An offline 60-second narrated demo artifact is included at `demo-video/out/scholarship-scout-demo.mp4`. It is a visual submission aid and does not replace the required public YouTube upload.
+
+To re-render it: `cd demo-video` then `npx remotion render src/index.ts ScholarshipScoutDemo out/scholarship-scout-demo.mp4 --codec=h264`.
+
 ## 0:00–0:20 — The problem
 
 Show the landing page. Explain that scholarship information is scattered and that generic AI can hide uncertainty or invent details.
