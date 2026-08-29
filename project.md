@@ -244,17 +244,14 @@ Mitigation: collect only information needed for matching; keep MVP state local; 
 - Six WebMCP tool registrations implemented in `lib/webmcp.ts`, with strict schemas and confirmation-safe state changes.
 - Typecheck, lint, seven tests, production build, security audit, and live browser smoke test pass.
 - Funding-type filtering is exposed in the profile UI, deterministic search engine, and `search_scholarships` WebMCP schema.
-- Live browser smoke test confirms the provenance panel and per-record source-proof panel are readable on production; the connected browser reports no `document.modelContext` support.
+- Live browser smoke test confirms the provenance panel and per-record source-proof panel are readable on production.
 - Results are ranked deterministically by profile fit and presented as eight readable cards first, with an explicit control to expand to all 30 catalog records.
-- The connected in-app browser and Chrome extension do not expose WebMCP on this host, so live tool invocation remains unverified.
-- The production deployment and public repository are complete; WebMCP browser verification and demo video remain incomplete.
+- ChatGPT's in-app browser discovered all six page-defined WebMCP tools and successfully invoked the search, eligibility, comparison, and checklist tools against the production deployment on August 29, 2026.
+- The production deployment, public repository, license, and WebMCP verification are complete; the required public YouTube upload remains incomplete.
 - Production URL: `https://scholarship-scout-brown.vercel.app`
 - Public repository: `https://github.com/Nifemi0/scholarship-scout`
 - Deployment: Vercel production deployment `dpl_HWv9ypwdccEnV1HZEhE3q7e6RfA8`, verified READY on August 28, 2026.
 
-## Open questions
+## Submission demo profile
 
-- Which student segment should the demo prioritize: Nigerian students, international applicants, or a global audience?
-- Which authoritative scholarship sources can be safely included in the initial catalog?
-- Which deployment platform will be used?
-- Should the first demo focus on one study level to make the match quality sharper?
+The final demo prioritizes a Nigerian Computer Science student with study level and destination left open. This produces a broad 30-record search, a transparent three-way comparison, and a checklist for the top-ranked Mastercard Foundation result.

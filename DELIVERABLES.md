@@ -24,8 +24,8 @@
 - [x] `generate_application_checklist` tool registration.
 - [x] `update_checklist_item` tool registration.
 - [x] Tool registration and example behavior documented in the project specification.
-- [x] Confirmation boundaries tested in code for state-changing tools; live browser invocation remains pending WebMCP availability.
-- [ ] WebMCP behavior tested in the target browser.
+- [x] Confirmation boundaries tested in code for state-changing tools.
+- [x] WebMCP behavior tested in ChatGPT's in-app browser: six tools discovered; search, eligibility, comparison, and checklist calls completed successfully.
 
 ## Engineering deliverables
 
@@ -47,7 +47,7 @@
 - [x] Brief implementation explanation.
 - [ ] Public YouTube demo under three minutes with audio.
 - [x] Demo runbook shows search, eligibility reasoning, approval, and checklist generation.
-- [ ] Final test of the live URL in ChatGPT's in-app browser or Chrome with WebMCP enabled.
+- [x] Final test of the live URL in ChatGPT's in-app browser with WebMCP enabled.
 
 ## Milestones
 
