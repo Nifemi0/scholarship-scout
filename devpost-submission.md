@@ -97,12 +97,11 @@ Local final artifact: `demo-video/out/scholarship-scout-demo.mp4`
 
 ## Screenshot Shot List
 
-1. Landing page and privacy-first search profile.
-2. Search results showing official-source provenance.
-3. Eligibility detail with match and unknown signals.
-4. Pairwise comparison workspace.
-5. Generated Mastercard Foundation application checklist.
-6. WebMCP production-proof panel from the final demo.
+1. `submission-assets/thumbnail.png` — landing page and product positioning.
+2. `submission-assets/search-results.png` — structured search results with official-source provenance.
+3. `submission-assets/webmcp-proof.png` — verified production WebMCP call sequence.
+4. Optional additional capture — eligibility detail with match and unknown signals.
+5. Optional additional capture — generated Mastercard Foundation application checklist.
 
 ## Submission Readiness Notes
 
@@ -141,4 +140,3 @@ Local final artifact: `demo-video/out/scholarship-scout-demo.mp4`
 | Level of learning | **USER CONFIRMATION NEEDED: None, Moderate, or Significant** |
 | Career AI value | **USER CONFIRMATION NEEDED: Yes or No** |
 | Public YouTube video | **TODO after upload** |
-
