@@ -144,7 +144,7 @@ export const MyComponent: React.FC<Props> = () => {
 
         {scene === 6 && (
           <div className="proof-card">
-            <div className="proof-prompt">Nigeria · Computer Science · any level · any funding</div>
+            <div className="proof-prompt">EXAMPLE PROFILE · Nigeria · Computer Science · any level · any funding</div>
             <div className="proof-grid">
               <Proof tool="search_scholarships" result="30 matches" />
               <Proof tool="check_eligibility × 3" result="0.75 each" />

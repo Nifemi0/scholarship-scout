@@ -12,7 +12,7 @@ Show the landing page. Explain that scholarship information is scattered and tha
 
 ## 0:20–0:45 — Set the profile
 
-Use the default profile: Nigeria, any study level, Computer Science, deadline before December 31, 2026. Point out that the app collects matching fields, not identity documents or passwords.
+Use one example profile: Nigeria, any study level, Computer Science, deadline before December 31, 2026. Make clear that Scholarship Scout supports students across countries and fields, and that the app collects matching fields, not identity documents or passwords.
 
 ## 0:45–1:10 — Search and explain
 
