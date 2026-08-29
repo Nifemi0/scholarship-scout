@@ -30,7 +30,7 @@ On August 29, 2026, ChatGPT's in-app browser discovered all six tools on the pro
 
 ## How Codex was used
 
-Codex helped scope the product, implement the deterministic domain layer and WebMCP adapter, verify official-source provenance, add tests and confirmation boundaries, debug browser exposure, deploy the app to Vercel, and generate and render the narrated demo artifact. Human review determined the project idea, trust boundaries, catalog policy, and submission claims.
+Codex helped scope the product, implement the deterministic domain layer and WebMCP adapter, verify official-source provenance, add tests and confirmation boundaries, debug browser exposure, deploy the app to Vercel, and generate and render the narrated demo artifact using genuine production captures. Human review determined the project idea, trust boundaries, catalog policy, and submission claims.
 
 ## Testing instructions
 
@@ -47,7 +47,7 @@ No login or credentials are required.
 - Live app: https://scholarship-scout-brown.vercel.app
 - Public repository: https://github.com/Nifemi0/scholarship-scout
 - Deployment inspector: https://vercel.com/nifemi0s-projects/scholarship-scout/GtP9YY5aPEucGVZwd4J5yaLMC2QB
-- Demo video: final local artifact verified at 60.05 seconds with H.264 video and AAC audio; TODO — upload `demo-video/out/scholarship-scout-demo.mp4` publicly to YouTube
+- Demo video: final local artifact verified at 60.05 seconds with H.264 video, AAC audio, live deployment captures, and verified WebMCP results; TODO — upload `demo-video/out/scholarship-scout-demo.mp4` publicly to YouTube
 
 ## Disclosure
 

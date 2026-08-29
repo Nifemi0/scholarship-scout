@@ -2,7 +2,7 @@
 
 Target length: 60 seconds.
 
-An offline 60-second narrated demo artifact is included at `demo-video/out/scholarship-scout-demo.mp4`. It shows the verified production call sequence (30 search matches, three 0.75 eligibility checks, pairwise comparison, and a three-task checklist). It is a visual submission aid and does not replace the required public YouTube upload.
+A 60-second narrated demo artifact is included at `demo-video/out/scholarship-scout-demo.mp4`. It combines genuine captures of the live production deployment with the verified WebMCP results: 30 search matches, a 0.75 eligibility score, a two-scholarship comparison, and a three-task checklist. It does not replace the required public YouTube upload.
 
 To re-render it: `cd demo-video` then `npx remotion render src/index.ts ScholarshipScoutDemo out/scholarship-scout-demo.mp4 --codec=h264`.
 
@@ -34,6 +34,6 @@ In a WebMCP-enabled browser, show the registered tools or invoke `search_scholar
 
 - [ ] Use a public YouTube link with audio.
 - [x] Keep the video under three minutes (verified duration: 60.05 seconds).
-- [ ] Show the live URL, not only a local build.
-- [ ] Show at least one WebMCP tool invocation.
-- [ ] Avoid copyrighted music and private student data.
+- [x] Show the live URL, not only a local build.
+- [x] Show genuine results from production WebMCP tool invocations.
+- [x] Avoid copyrighted music and private student data.

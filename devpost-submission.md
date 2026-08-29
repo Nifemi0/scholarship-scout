@@ -92,7 +92,7 @@ Local final artifact: `demo-video/out/scholarship-scout-demo.mp4`
 - Verified duration: 60.05 seconds
 - Video: H.264, 1280×720
 - Audio: stereo AAC
-- Content: working product flow and the verified production WebMCP call sequence
+- Content: genuine live-deployment captures of the working product flow plus the verified production WebMCP call sequence
 - Public YouTube URL: **TODO after upload**
 
 ## Screenshot Shot List

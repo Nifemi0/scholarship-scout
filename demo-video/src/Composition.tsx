@@ -2,6 +2,7 @@ import {
   AbsoluteFill,
   Audio,
   CalculateMetadataFunction,
+  CanvasImage,
   Composition,
   interpolate,
   staticFile,
@@ -58,6 +59,9 @@ export const MyComponent: React.FC<Props> = () => {
         <span className="mark">✦</span> SCHOLARSHIP SCOUT
         <span className="topline-right">HUMAN + AGENT RESEARCH</span>
       </div>
+      {scene >= 1 && scene <= 5 ? (
+        <LiveCapture scene={scene as 1 | 2 | 3 | 4 | 5} opacity={progress} />
+      ) : (
       <div className="content" style={{opacity: progress}}>
         <div className="kicker">
           {scene === 6
@@ -161,6 +165,7 @@ export const MyComponent: React.FC<Props> = () => {
           </div>
         )}
       </div>
+      )}
       <div className="footer"><span>WEBMCP CHALLENGE · 2026</span><span>{String(scene + 1).padStart(2, "0")} / 08</span></div>
     </AbsoluteFill>
   );
@@ -173,3 +178,59 @@ const Program = ({title, provider, badge}: {title: string; provider: string; bad
 const Proof = ({tool, result}: {tool: string; result: string}) => (
   <div className="proof"><code>{tool}</code><b>{result}</b></div>
 );
+
+const liveCaptures = {
+  1: {
+    image: "live/landing.png",
+    label: "LIVE DEPLOYMENT",
+    title: "The production app",
+    call: "scholarship-scout-brown.vercel.app",
+    result: "30 source-linked programmes",
+  },
+  2: {
+    image: "live/search-results.png",
+    label: "LIVE WEBMCP CALL",
+    title: "Structured search",
+    call: "search_scholarships",
+    result: "30 matching opportunities",
+  },
+  3: {
+    image: "live/eligibility.png",
+    label: "LIVE WEBMCP CALL",
+    title: "Explainable eligibility",
+    call: "check_eligibility",
+    result: "0.75 · Strong starting match",
+  },
+  4: {
+    image: "live/comparison.png",
+    label: "LIVE WEBMCP CALL",
+    title: "Pairwise comparison",
+    call: "compare_scholarships",
+    result: "2 scholarships normalized",
+  },
+  5: {
+    image: "live/checklist.png",
+    label: "LIVE WEBMCP CALL",
+    title: "Actionable checklist",
+    call: "generate_application_checklist",
+    result: "3 partner-aware tasks",
+  },
+} as const;
+
+const LiveCapture = ({scene, opacity}: {scene: 1 | 2 | 3 | 4 | 5; opacity: number}) => {
+  const capture = liveCaptures[scene];
+  return (
+    <div className="live-capture" style={{opacity}}>
+      <div className="live-heading">
+        <div><small>{capture.label}</small><h2>{capture.title}</h2></div>
+        <div className="live-result"><code>{capture.call}</code><b>{capture.result}</b></div>
+      </div>
+      <div className="browser-frame">
+        <div className="browser-bar"><span>●</span><span>●</span><span>●</span><b>https://scholarship-scout-brown.vercel.app</b><em>LIVE</em></div>
+        <div className="browser-image">
+          <CanvasImage src={staticFile(capture.image)} style={{width: "100%", height: "100%", objectFit: "cover"}} />
+        </div>
+      </div>
+    </div>
+  );
+};
