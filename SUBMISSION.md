@@ -47,7 +47,8 @@ No login or credentials are required.
 - Live app: https://scholarship-scout-brown.vercel.app
 - Public repository: https://github.com/Nifemi0/scholarship-scout
 - Deployment inspector: https://vercel.com/nifemi0s-projects/scholarship-scout/GtP9YY5aPEucGVZwd4J5yaLMC2QB
-- Demo video: final local artifact verified at 60.05 seconds with H.264 video, AAC audio, live deployment captures, and verified WebMCP results; TODO — upload `demo-video/out/scholarship-scout-demo.mp4` publicly to YouTube
+- Demo video: https://youtu.be/azGoUx1tYdo — public, 60.05 seconds, H.264 video, AAC audio, live deployment captures, and verified WebMCP results
+- Devpost project: https://devpost.com/software/scholarship-scout
 
 ## Disclosure
 

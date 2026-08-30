@@ -93,7 +93,7 @@ Local final artifact: `demo-video/out/scholarship-scout-demo.mp4`
 - Video: H.264, 1280×720
 - Audio: stereo AAC
 - Content: genuine live-deployment captures of the working product flow plus the verified production WebMCP call sequence
-- Public YouTube URL: **TODO after upload**
+- Public YouTube URL: https://youtu.be/azGoUx1tYdo
 
 ## Screenshot Shot List
 
@@ -113,8 +113,8 @@ Local final artifact: `demo-video/out/scholarship-scout-demo.mp4`
 - Type check and lint: passed.
 - Production build: passed.
 - Demo media streams, dimensions, duration, and visual layout: verified.
-- Public YouTube upload: pending.
-- Devpost project creation, thumbnail, and final entry: pending explicit approval.
+- Public YouTube upload: published and verified at https://youtu.be/azGoUx1tYdo.
+- Devpost project, thumbnail, and WebMCP Challenge entry: submitted and verified at https://devpost.com/software/scholarship-scout.
 
 ## Known Limitations
 
@@ -137,6 +137,6 @@ Local final artifact: `demo-video/out/scholarship-scout-demo.mp4`
 | Public code repository | https://github.com/Nifemi0/scholarship-scout |
 | Agents or clients tested | ChatGPT in-app browser against the live production deployment |
 | AI tools leveraged | OpenAI Codex and ChatGPT |
-| Level of learning | **USER CONFIRMATION NEEDED: None, Moderate, or Significant** |
-| Career AI value | **USER CONFIRMATION NEEDED: Yes or No** |
-| Public YouTube video | **TODO after upload** |
+| Level of learning | Significant |
+| Career AI value | Yes |
+| Public YouTube video | https://youtu.be/azGoUx1tYdo |
