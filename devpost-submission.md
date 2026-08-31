@@ -93,7 +93,7 @@ Local final artifact: `demo-video/out/scholarship-scout-demo.mp4`
 - Video: H.264, 1280×720
 - Audio: stereo AAC
 - Content: evidence-first animated walkthrough of the verified production workflow, with locally generated narration and no third-party music
-- Public YouTube URL: pending refreshed upload
+- Public YouTube URL: https://youtu.be/II-ifbye9i0
 
 ## Screenshot Shot List
 
@@ -113,7 +113,7 @@ Local final artifact: `demo-video/out/scholarship-scout-demo.mp4`
 - Type check and lint: passed.
 - Production build: passed.
 - Demo media streams, dimensions, duration, and visual layout: verified.
-- Refreshed public YouTube upload: pending.
+- Refreshed public YouTube upload: published and verified at https://youtu.be/II-ifbye9i0; YouTube reported no copyright issues.
 - Devpost project description: updated to the evidence-first release; the WebMCP Challenge entry remains live at https://devpost.com/software/scholarship-scout.
 
 ## Known Limitations
@@ -139,4 +139,4 @@ Local final artifact: `demo-video/out/scholarship-scout-demo.mp4`
 | AI tools leveraged | OpenAI Codex and ChatGPT |
 | Level of learning | Significant |
 | Career AI value | Yes |
-| Public YouTube video | Pending refreshed upload |
+| Public YouTube video | https://youtu.be/II-ifbye9i0 |

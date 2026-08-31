@@ -32,7 +32,7 @@ In a WebMCP-enabled browser, show the registered tools or invoke `search_scholar
 
 ## Recording checklist
 
-- [ ] Upload the refreshed artifact to a public YouTube link with audio.
+- [x] Refreshed public YouTube link with audio: https://youtu.be/II-ifbye9i0
 - [x] Keep the video under three minutes (verified duration: 60.05 seconds).
 - [x] Show the live URL, not only a local build.
 - [x] Show genuine results from production WebMCP tool invocations.

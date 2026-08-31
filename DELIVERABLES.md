@@ -81,7 +81,7 @@
 - [x] English project description explaining WebMCP fit.
 - [x] Explanation of what humans and agents can do together.
 - [x] Brief implementation explanation.
-- [ ] Refreshed public YouTube demo under three minutes with audio; local render and upload verification pending.
+- [x] Refreshed public YouTube demo under three minutes with audio: https://youtu.be/II-ifbye9i0 (60.05 seconds; copyright check reported no issues).
 - [x] Demo runbook shows search, eligibility reasoning, approval, and checklist generation.
 - [x] Final test of the live URL in ChatGPT's in-app browser with WebMCP enabled.
 
