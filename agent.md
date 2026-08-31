@@ -10,9 +10,9 @@ Build a trustworthy WebMCP scholarship discovery workflow where an agent helps a
 
 ## Current status
 
-- **Status:** In progress.
-- **Phase:** MVP foundation and matching flow complete; WebMCP-capable browser verification and catalog verification remain.
-- **Next milestone:** Add authoritative catalog records, polish confirmation/persistence behavior, and verify WebMCP tools in the target browser.
+- **Status:** August 31 release candidate implements the runtime fixes and catalog trust remediation. Thirty named programme records now carry evidence scope, country/field coverage, cycle state, and application readiness; contradicted high-risk facts were corrected and unresolved facts remain unknown. The public deployment, repository, demo, and submission are re-verified as a separate release step.
+- **Phase:** Safe persistence, shared UI/agent state, validated mutations, saved-item management, three-way comparison, neutral profile defaults, evidence-aware ranking, and source-aware checklists are implemented. Twenty-seven tests, type-check, lint, and local browser checks pass.
+- **Next milestone:** Render and verify the refreshed demo, publish the tested release, re-run live WebMCP verification, and update the hackathon entry.
 - **Known constraint:** The root workspace contains unrelated Downrail files. Work inside `scholarship-scout/` unless explicitly asked otherwise.
 
 ## Non-negotiable rules

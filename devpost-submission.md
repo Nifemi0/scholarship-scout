@@ -12,7 +12,7 @@ Scholarship research is fragmented across provider websites, eligibility pages, 
 
 ## Solution
 
-Scholarship Scout turns scholarship research into a structured human-and-agent workflow. A student provides a lightweight profile such as country, field, study level, funding preference, and optional deadline. The app searches a curated catalog of 30 real opportunities, displays official provider links and provenance, explains each matching signal, compares selected options, and generates a practical application checklist.
+Scholarship Scout turns scholarship research into a structured human-and-agent workflow. A student provides a lightweight profile such as country, field, study level, funding preference, and optional deadline. The app searches a curated catalog of 30 named programme records, displays official provider links and evidence scope, explains each known or unknown signal, compares selected options, and generates a practical planning checklist.
 
 The same workflow is available to agents through six typed WebMCP tools. An agent can search and analyze the catalog without scraping the visual interface, while the student remains in control of state-changing actions and final decisions.
 
@@ -44,9 +44,9 @@ The final implementation was tested through ChatGPT’s in-app browser against t
 ## Key Features
 
 - Structured search by applicant country, field, study level, funding type, destination, and deadline.
-- A curated catalog of 30 named scholarship opportunities with official HTTPS provider links and provenance.
+- A curated catalog of 30 named programme records with official HTTPS provider links, review dates, cycle state, and evidence scope.
 - Explainable eligibility signals that distinguish matches, mismatches, and unknowns.
-- Pairwise comparison of funding, destination, level, deadline, and source details.
+- Two- or three-way comparison of funding, destination, level, deadline, requirements, checklist progress, and source details.
 - Human-confirmed shortlisting for state-changing actions.
 - Application checklist generation and checklist-item updates.
 - Six page-defined WebMCP tools with strict object schemas.
@@ -69,10 +69,10 @@ No login or credentials are required.
 1. Open https://scholarship-scout-brown.vercel.app in ChatGPT’s in-app browser, which supports WebMCP by default.
 2. Ask: “Find scholarships for a Nigerian computer-science student, compare the best three, and create an application checklist for the top result.”
 3. Confirm that the page exposes these six tools: `search_scholarships`, `check_eligibility`, `compare_scholarships`, `save_to_shortlist`, `generate_application_checklist`, and `update_checklist_item`.
-4. Invoke `search_scholarships` with applicant country Nigeria, field Computer Science, any study level, and any funding type. The verified production test returned 30 matches.
-5. Run `check_eligibility` for the first three results. The verified test returned a 0.75 strong-match score for each.
-6. Compare the results in pairs because `compare_scholarships` accepts at most two IDs per call.
-7. Generate the checklist for `mastercard-scholars`. The verified production result contains Academic records, Personal statement, and Partner-specific documents.
+4. Invoke `search_scholarships` with applicant country Nigeria, field Computer Science, any study level, and any funding type. Inspect the returned candidates, evidence states, and ranks; do not expect every catalog record to match.
+5. Run `check_eligibility` for the first three results. Confirm that only known matches add points and unresolved facts remain unknown.
+6. Compare the three results in one `compare_scholarships` call and confirm that the visible comparison workspace updates.
+7. Generate the checklist for the top result. Confirm that it is labeled as a planning aid and preserves official-source verification steps.
 8. Open an official-source link from a result to inspect the underlying provider page.
 
 ## Public Demo Link
@@ -109,7 +109,7 @@ Local final artifact: `demo-video/out/scholarship-scout-demo.mp4`
 - Public repository: verified.
 - MIT license and GitHub About metadata: verified.
 - Six WebMCP tools in ChatGPT’s in-app browser: verified.
-- Automated tests: 9 passed.
+- Automated tests: 27 passed in the catalog-remediation release candidate.
 - Type check and lint: passed.
 - Production build: passed.
 - Demo media streams, dimensions, duration, and visual layout: verified.
@@ -120,7 +120,7 @@ Local final artifact: `demo-video/out/scholarship-scout-demo.mp4`
 
 - The catalog is curated and manually reviewed rather than continuously synchronized with every provider; students must verify current partner details on the linked official source.
 - Deadlines and study levels can be partner-dependent and are shown as unknown when the catalog cannot support a definitive claim.
-- Eligibility scores are transparent matching heuristics, not guarantees of acceptance.
+- Rankings are transparent known-signal counts, not guarantees of eligibility, quality, or acceptance.
 - Checklist tasks are planning aids and may require additional partner-specific documents.
 - The app does not submit applications or store sensitive identity documents.
 

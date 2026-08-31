@@ -2,7 +2,7 @@
 
 Target length: 60 seconds.
 
-A 60-second narrated demo artifact is included at `demo-video/out/scholarship-scout-demo.mp4`. It combines genuine captures of the live production deployment with the verified WebMCP results: 30 search matches, a 0.75 eligibility score, a two-scholarship comparison, and a three-task checklist. It does not replace the required public YouTube upload.
+A 60-second narrated demo artifact is included at `demo-video/out/scholarship-scout-demo.mp4`. It explains the evidence-first workflow without promising a fixed search count or fit score: 30 named programme records, known/unknown signals, a three-way comparison, and a source-aware planning checklist.
 
 To re-render it: `cd demo-video` then `npx remotion render src/index.ts ScholarshipScoutDemo out/scholarship-scout-demo.mp4 --codec=h264`.
 
@@ -20,7 +20,7 @@ Show the starting matches. Open “Check my fit” on one opportunity. Point to 
 
 ## 1:10–1:35 — Compare and shortlist
 
-Select “Compare” on both results. Show the comparison workspace, then save one opportunity to the shortlist. Emphasize that saving is a human-approved action.
+Select up to three results. Show the comparison workspace, then save one opportunity to the shortlist. Emphasize that saving is a human-approved action.
 
 ## 1:35–2:05 — Build an application plan
 

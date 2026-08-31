@@ -6,7 +6,7 @@
 - **Tagline:** Find the opportunities that fit. Apply with confidence.
 - **Hackathon:** The WebMCP Challenge
 - **Submission deadline:** September 3, 2026 at 1:00 PM PDT
-- **Current phase:** MVP implementation — foundation and core matching flow complete
+- **Current phase:** Submission release candidate — implementation and catalog trust remediation complete; final publication verification in progress
 - **Primary audience:** Students searching for scholarships and funding opportunities
 - **Product type:** WebMCP-powered web application
 
@@ -236,22 +236,22 @@ Mitigation: expose useful search, comparison, shortlist, and checklist actions w
 
 Mitigation: collect only information needed for matching; keep MVP state local; never request identity documents or credentials.
 
-## Implementation status — August 28, 2026
+## Implementation status — August 31, 2026
 
 - Application foundation created in `app/`, with Next.js, TypeScript, React, local persistence, and an MIT license.
 - Curated catalog created with 30 official provider/program pages, explicit source notes, freshness metadata, and conservative deadline labels.
 - Deterministic search, filtering, eligibility match/mismatch/unknown states, comparison, shortlist, and checklist behavior implemented.
 - Six WebMCP tool registrations implemented in `lib/webmcp.ts`, with strict schemas and confirmation-safe state changes.
-- Typecheck, lint, seven tests, production build, security audit, and live browser smoke test pass.
+- Typecheck, lint, 27 tests, and local browser smoke checks pass for the catalog-remediation release candidate.
 - Funding-type filtering is exposed in the profile UI, deterministic search engine, and `search_scholarships` WebMCP schema.
 - Live browser smoke test confirms the provenance panel and per-record source-proof panel are readable on production.
-- Results are ranked deterministically by profile fit and presented as eight readable cards first, with an explicit control to expand to all 30 catalog records.
+- Results are ranked deterministically across five evidence checks. Known mismatches are filtered, unknowns add no points, and discovery-only records are labeled rather than presented as verified matches.
 - ChatGPT's in-app browser discovered all six page-defined WebMCP tools and successfully invoked the search, eligibility, comparison, and checklist tools against the production deployment on August 29, 2026.
-- The production deployment, public repository, license, and WebMCP verification are complete; the required public YouTube upload remains incomplete.
+- The live deployment, repository, video, and submission are re-verified after the release candidate is published.
 - Production URL: `https://scholarship-scout-brown.vercel.app`
 - Public repository: `https://github.com/Nifemi0/scholarship-scout`
 - Deployment: Vercel production deployment `dpl_HWv9ypwdccEnV1HZEhE3q7e6RfA8`, verified READY on August 28, 2026.
 
 ## Submission demo profile
 
-The final demo prioritizes a Nigerian Computer Science student with study level and destination left open. This produces a broad 30-record search, a transparent three-way comparison, and a checklist for the top-ranked Mastercard Foundation result.
+The final demo uses a Nigerian Computer Science student with study level and destination left open. It demonstrates a ranked candidate set—not 30 guaranteed matches—a transparent three-way comparison, and a source-aware checklist for the top result.

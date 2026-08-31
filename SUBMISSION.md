@@ -18,7 +18,7 @@ The application is built with Next.js 16, React, and TypeScript. Search, filteri
 
 ## Working features
 
-- Search and rank 30 named funding opportunities by country, field, study level, funding type, destination, and deadline.
+- Search and rank candidates across 30 named programme records by country, field, study level, funding type, destination, deadline, and current-route evidence.
 - Explain eligibility as match, mismatch, or unknown instead of inventing missing facts.
 - Compare normalized scholarship records and expose the official provider source for every result.
 - Save a human-approved shortlist and generate a locally persistent application checklist.
@@ -26,7 +26,7 @@ The application is built with Next.js 16, React, and TypeScript. Search, filteri
 
 ## Verified WebMCP test
 
-On August 29, 2026, ChatGPT's in-app browser discovered all six tools on the production deployment. A real WebMCP run searched for Nigerian Computer Science opportunities, checked the top three eligibility results, compared the top result against the next two, and generated a three-item Mastercard Foundation application checklist. The calls used `search_scholarships`, `check_eligibility`, `compare_scholarships`, and `generate_application_checklist`; they did not fall back to visual page navigation.
+ChatGPT's in-app browser has discovered all six tools on the production deployment and completed the search, eligibility, comparison, and checklist path. The final release is re-tested after deployment; the submission does not promise a fixed result count, score, or scholarship winner.
 
 ## How Codex was used
 
@@ -38,7 +38,7 @@ Codex helped scope the product, implement the deterministic domain layer and Web
 2. Ask: “Find scholarships for a Nigerian computer-science student, compare the best three, and create an application checklist for the top result.”
 3. Confirm profile transmission when prompted.
 4. Verify that the agent discovers six page tools and uses the search, eligibility, comparison, and checklist tools.
-5. Check that the top result includes an official source, manual review date, and unknown criteria instead of unsupported claims.
+5. Check that results expose official sources, review dates, evidence scope, cycle status, and unknown criteria instead of unsupported claims.
 
 No login or credentials are required.
 
@@ -47,16 +47,16 @@ No login or credentials are required.
 - Live app: https://scholarship-scout-brown.vercel.app
 - Public repository: https://github.com/Nifemi0/scholarship-scout
 - Deployment inspector: https://vercel.com/nifemi0s-projects/scholarship-scout/GtP9YY5aPEucGVZwd4J5yaLMC2QB
-- Demo video: https://youtu.be/azGoUx1tYdo — public, 60.05 seconds, H.264 video, AAC audio, live deployment captures, and verified WebMCP results
+- Demo video: refreshed public YouTube link is added after the final render and upload
 - Devpost project: https://devpost.com/software/scholarship-scout
 
 ## Disclosure
 
-The current build uses a curated catalog of real scholarship programs and official provider/program pages. Deadlines and eligibility rules can change, so each opportunity must still be checked against its linked provider before a student relies on it. The application does not submit applications or guarantee eligibility or awards.
+The current build uses a curated catalog of 30 named programme records and official provider/program pages. Some records are discovery directories or have unresolved route facts; those states are labeled rather than counted as verified matches. The application does not submit applications or guarantee eligibility or awards.
 
 ## Known limitations
 
 - The catalog is intentionally small and curated; it is not exhaustive.
-- Most programme cycles use conservative “varies” labels where the official source controls the current deadline.
-- Comparison accepts two IDs per call, so comparing three results requires two calls.
+- Some programme cycles and country routes remain unknown until the student checks the official source.
+- Comparison accepts two or three IDs per call.
 - Browser persistence is device-local and there is no account synchronization.
