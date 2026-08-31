@@ -92,8 +92,8 @@ Local final artifact: `demo-video/out/scholarship-scout-demo.mp4`
 - Verified duration: 60.05 seconds
 - Video: H.264, 1280×720
 - Audio: stereo AAC
-- Content: genuine live-deployment captures of the working product flow plus the verified production WebMCP call sequence
-- Public YouTube URL: https://youtu.be/azGoUx1tYdo
+- Content: evidence-first animated walkthrough of the verified production workflow, with locally generated narration and no third-party music
+- Public YouTube URL: pending refreshed upload
 
 ## Screenshot Shot List
 
@@ -105,16 +105,16 @@ Local final artifact: `demo-video/out/scholarship-scout-demo.mp4`
 
 ## Submission Readiness Notes
 
-- Live deployment: verified.
-- Public repository: verified.
+- Live deployment: verified READY as `dpl_Gjd6b1DgPgWsnCgywUZwYxjaZR6Y` at the public alias.
+- Public repository: verified synchronized at commit `dc1bbda`.
 - MIT license and GitHub About metadata: verified.
-- Six WebMCP tools in ChatGPT’s in-app browser: verified.
+- Six WebMCP tools in ChatGPT’s in-app browser: verified after release; the clean example returned 25 candidates, three eligibility results, a three-way comparison, and three checklist tasks.
 - Automated tests: 27 passed in the catalog-remediation release candidate.
 - Type check and lint: passed.
 - Production build: passed.
 - Demo media streams, dimensions, duration, and visual layout: verified.
-- Public YouTube upload: published and verified at https://youtu.be/azGoUx1tYdo.
-- Devpost project, thumbnail, and WebMCP Challenge entry: submitted and verified at https://devpost.com/software/scholarship-scout.
+- Refreshed public YouTube upload: pending.
+- Devpost project description: updated to the evidence-first release; the WebMCP Challenge entry remains live at https://devpost.com/software/scholarship-scout.
 
 ## Known Limitations
 
@@ -139,4 +139,4 @@ Local final artifact: `demo-video/out/scholarship-scout-demo.mp4`
 | AI tools leveraged | OpenAI Codex and ChatGPT |
 | Level of learning | Significant |
 | Career AI value | Yes |
-| Public YouTube video | https://youtu.be/azGoUx1tYdo |
+| Public YouTube video | Pending refreshed upload |

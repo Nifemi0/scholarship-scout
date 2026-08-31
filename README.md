@@ -49,11 +49,11 @@ Search, eligibility, comparison, and checklist generation are deterministic. Sho
 
 ## Current status
 
-**August 31 release candidate:** Matching, persistence, comparison, and catalog-trust remediation are implemented locally. The catalog contains 30 named programme records, but the app distinguishes current application routes from partner directories and unresolved discovery records. Unknown facts do not increase a ranking. Deployment and public-repository synchronization are verified separately before release.
+**August 31 production release:** Matching, persistence, comparison, and catalog-trust remediation are live in deployment `dpl_Gjd6b1DgPgWsnCgywUZwYxjaZR6Y`. GitHub is synchronized at commit `dc1bbda`. The catalog contains 30 named programme records, but the app distinguishes current application routes from partner directories and unresolved discovery records. Unknown facts do not increase a ranking.
 
 **Submission candidate — implemented, deployed, and WebMCP-verified.**
 
-The production app is live at <https://scholarship-scout-brown.vercel.app>. Its six page-defined WebMCP tools have been discovered and invoked successfully in ChatGPT's in-app browser, including a complete search → eligibility → comparison → checklist flow.
+The production app is live at <https://scholarship-scout-brown.vercel.app>. Its six page-defined WebMCP tools were discovered and invoked successfully after the August 31 release. A clean Nigeria + Computer Science + any-level + any-funding run returned 25 candidates, preserved unknowns in the top-three eligibility checks, updated a three-way comparison, and generated three Chevening planning tasks.
 
 The current implementation uses a curated catalog of 30 named scholarship and funding programme records with official provider/program pages. A record is not automatically a verified match or an open application. Deadlines and eligibility can change, so users are directed to the official source before relying on a result.
 

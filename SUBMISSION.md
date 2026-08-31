@@ -26,7 +26,7 @@ The application is built with Next.js 16, React, and TypeScript. Search, filteri
 
 ## Verified WebMCP test
 
-ChatGPT's in-app browser has discovered all six tools on the production deployment and completed the search, eligibility, comparison, and checklist path. The final release is re-tested after deployment; the submission does not promise a fixed result count, score, or scholarship winner.
+After the August 31 production release, ChatGPT's in-app browser discovered all six tools and completed the search, eligibility, comparison, and checklist path. A clean Nigeria + Computer Science + any-level + any-funding run returned 25 candidates; the count is a reproducible test result, not a promise that all candidates are eligible or objectively best.
 
 ## How Codex was used
 
@@ -46,7 +46,7 @@ No login or credentials are required.
 
 - Live app: https://scholarship-scout-brown.vercel.app
 - Public repository: https://github.com/Nifemi0/scholarship-scout
-- Deployment inspector: https://vercel.com/nifemi0s-projects/scholarship-scout/GtP9YY5aPEucGVZwd4J5yaLMC2QB
+- Deployment inspector: https://vercel.com/nifemi0s-projects/scholarship-scout/Gjd6b1DgPgWsnCgywUZwYxjaZR6Y
 - Demo video: refreshed public YouTube link is added after the final render and upload
 - Devpost project: https://devpost.com/software/scholarship-scout
 
