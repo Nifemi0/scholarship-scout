@@ -1,5 +1,11 @@
 # Scholarship Scout
 
+<!-- nuvixes-project-credit -->
+Built by [Nifemi](https://github.com/Nifemi0), founder of [Nuvixes](https://nuvixes.studio/).
+[Read the Scholarship Scout build story at Nuvixes](https://nuvixes.studio/projects/scholarship-scout) for the design decisions, development milestones, and current project status.
+<!-- /nuvixes-project-credit -->
+
+
 Scholarship Scout is a WebMCP-powered application that helps students discover scholarships, understand their eligibility, and prepare personalized application checklists with an AI agent.
 
 ## Run locally
